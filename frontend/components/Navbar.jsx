@@ -2,8 +2,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 export default function Navbar() {
   return (
-    <nav>
-      <div className="nav-bar">
+    <div className="nav-bar">
         <h2>Green Thumb Club</h2>
         <>
           <ul className="links">
@@ -12,7 +11,6 @@ export default function Navbar() {
             <FaShoppingCart size={20} />
           </ul>
         </>
-      </div>
-    </nav>
+    </div>
   );
 }

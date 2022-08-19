@@ -1,10 +1,11 @@
 import { createContext, useEffect, useState } from 'react';
-import { PRODUCT_QUERY } from '../pages/query';
+import { PRODUCT_QUERY } from './query';
 
 export const ProductContext = createContext();
 
 export default function ProductProvider({ children }) {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -21,11 +22,13 @@ export default function ProductProvider({ children }) {
       });
       const data = await response.json();
       setProducts(data.data.products.data);
+      setLoading(false);
     } catch (err) {
       console.error(err);
     }
   };
-  // console.log('outside fetch', products);
 
-  return <ProductContext.Provider value={{ products }}>{children}</ProductContext.Provider>;
+  return (
+    <ProductContext.Provider value={{ products, loading }}>{children}</ProductContext.Provider>
+  );
 }
