@@ -19,3 +19,23 @@ query {
   }
 }
 `
+
+
+export const IMAGE_QUERY = `
+query {
+  images {
+    data {
+      attributes{
+        name
+        image {
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`

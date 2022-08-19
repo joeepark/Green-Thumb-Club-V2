@@ -71,3 +71,18 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: min(100%, 80rem)
+}
+
+.gallery-container {
+  box-sizing: content-box;
+}
+
+.gallery-container > div {
+  margin: 10px;
+}
