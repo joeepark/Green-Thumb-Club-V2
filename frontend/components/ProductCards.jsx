@@ -12,9 +12,9 @@ export default function ProductCard() {
     return <h2>No Products to Show</h2>;
   } else {
     return (
-      <div className="product-gallery">
+      <div className="product-container">
         {fourProducts.map((product, index) => (
-          <div className="product-card" key={index}>
+          <div key={index}>
             <img
               src={`${path}${product.attributes.image.data.attributes.formats.small.url}`}
               className="product-image"

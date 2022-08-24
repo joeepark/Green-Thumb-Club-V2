@@ -27,5 +27,6 @@ export default function ImageProvider({ children }) {
       console.error(err);
     }
   };
+
   return <ImageContext.Provider value={{ images, loading }}>{children}</ImageContext.Provider>;
 }
